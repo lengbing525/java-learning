@@ -5,7 +5,7 @@ import org.junit.Test;
 /**
  * Created by lengbing on 2017/3/31.
  */
-public class GenericJunitTest{
+public class GenericsTest {
     @Test
     public void genericTest1(){
         Holder<String> name = new Holder<String>("corn");
