@@ -49,6 +49,7 @@
     <modules>
         <module>java-multithread</module>
         <module>java-base</module>
+        <module>java-util</module>
         <module>java-container</module>
         <module>java-io</module>
         <module>java8</module>
