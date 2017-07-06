@@ -30,7 +30,6 @@ public class RestfulRequestMappingHandlerMapping extends RequestMappingHandlerMa
      * @see #handleNoMatch(Set, String, HttpServletRequest)
      */
     protected HandlerMethod lookupHandlerMethod(String lookupPath, HttpServletRequest request) throws Exception {
-        System.out.println("--------------------------4-------------------------");
         //自己的查找逻辑，如果找不到，再执行原有的逻辑，以免出现错误情况
         HandlerMethod handlerMethod = lookupHandlerMethodHere(lookupPath, request);
         if (handlerMethod == null)
@@ -40,13 +39,10 @@ public class RestfulRequestMappingHandlerMapping extends RequestMappingHandlerMa
 
     //自己的查找逻辑，根据从请求头中获取服务名servicename，进行匹配查找
     private HandlerMethod lookupHandlerMethodHere(String lookupPath, HttpServletRequest request) {
-        System.out.println("--------------------------1-------------------------");
         String servicename = request.getHeader("servicename");
         if (!StringUtils.isEmpty(servicename)) {
-            System.out.println("--------------------------2-------------------------");
             List<HandlerMethod> methodList = this.getHandlerMethodsForMappingName(servicename);
             if (methodList.size() > 0){
-                System.out.println("--------------------------3-------------------------");
                 HandlerMethod handlerMethod = methodList.get(0);
                 RequestMappingInfo requestMappingInfo = mappingLookup.get(handlerMethod);
                 handleMatch(requestMappingInfo, lookupPath, request);

@@ -1,7 +1,8 @@
 package com.brianway.learning.java.spring_boot_test.controller;
 
-import com.alibaba.fastjson.JSONObject;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -9,12 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class IndexController {
-    @RequestMapping("/")
-    public String index() {
-        JSONObject object = new JSONObject();
-        object.put("name","lengbing");
-        object.put("version","1.0.0");
-        object.put("time","2017-10-10");
-        return object.toString();
+    @RequestMapping(value = "/{ver}/restfulUrl",name = "test1")
+    public String index(@RequestParam("context") String context,@PathVariable("ver") Integer ver) {
+
+        return "restfulUrl";
     }
 }
