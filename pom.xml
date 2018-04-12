@@ -20,6 +20,7 @@
         <caffeine.version>2.5.0</caffeine.version>
         <joda.version>2.4</joda.version>
         <commons-lang3.version>3.3</commons-lang3.version>
+        <guava.version>20.0</guava.version>
     </properties>
 
     <description>
@@ -60,6 +61,7 @@
         <module>java8</module>
         <module>java-jvm</module>
         <module>spring-boot-test</module>
+        <module>java-guava</module>
     </modules>
 
     <dependencyManagement>
@@ -68,7 +70,6 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>com.github.ben-manes.caffeine</groupId>
@@ -100,6 +101,11 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>1.7.7</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
