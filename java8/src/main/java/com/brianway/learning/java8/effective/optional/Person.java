@@ -9,4 +9,8 @@ public class Person {
     public Optional<Car> getCar() {
         return Optional.ofNullable(car);
     }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
 }

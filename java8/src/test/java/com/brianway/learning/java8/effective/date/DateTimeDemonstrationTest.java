@@ -1,4 +1,4 @@
-package com.brianway.learning.java8.effective.optional;
+package com.brianway.learning.java8.effective.date;
 
 import com.brianway.learning.java.util.DateUtil;
 import org.junit.Test;

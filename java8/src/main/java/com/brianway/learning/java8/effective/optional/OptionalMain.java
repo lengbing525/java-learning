@@ -25,9 +25,10 @@ public class OptionalMain {
                 .orElse("Unknown");
     }
 
+
     public Insurance findCheapestInsurance(Person person, Car car) {
         //省略业务逻辑
-        Insurance cheapestCompany = new Insurance();
+        Insurance cheapestCompany = new Insurance("sb");
         return cheapestCompany;
     }
 
@@ -38,7 +39,7 @@ public class OptionalMain {
     }
 
     public void PrintIfWithName(String name) {
-        Optional<Insurance> optInsurance = Optional.of(new Insurance());
+        Optional<Insurance> optInsurance = Optional.of(new Insurance("sb"));
         optInsurance.filter(insurance -> name.equals(insurance.getName()))
                 .ifPresent(x -> System.out.println("ok"));
     }
