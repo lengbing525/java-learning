@@ -3,8 +3,6 @@ package com.brianway.learning.java.guava.io;
 import java.io.File;
 import java.io.IOException;
 
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.io.Files;
 import org.junit.Test;
 
