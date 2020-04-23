@@ -1,14 +1,27 @@
 package com.brianway.learning.java.base.constructor;
 
 /**
- * Created by Brian on 2016/4/14.
  *
- * 构造方法调用问题
- * 子类构造方法会首先默认调用父类的无参构造方法，无论是否显式写了super();
+ * @author Brian
+ * @date 2016/4/14
+ *
+ *
+ * 静态域 -> 构造代码块 -> 构造方法
+ * 静态域包括静态变量、静态块, 静态变量和静态块的执行顺序由位置决定
+ *
+ * 静态代码块（static{}）在类加载的时候执行一次。
+ * 构造代码块（{}内的部分）在每一次创建对象时执行，始终在构造方法前执行。
+ * 构造方法在新建对象时调用（ 就是new的时候 ）
+ *
+ *
  */
 public class SonClass extends FatherClass {
 
     private static int countSon;
+
+    {
+        System.out.println("子类的构造代码块");
+    }
 
     static {
         System.out.println("子类可以访问父类的静态属性count " + count);
